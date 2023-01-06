@@ -1,0 +1,40 @@
+= EasyLang 语法定义
+:experimental:
+:icons: font
+:toc: right
+:toc-title: 目录
+:toclevels: 4
+:source-highlighter: rouge
+
+== 说明
+
+*EasyLang* 语法类似于 `Kotlin`
+
+== 关键字
+
+*EasyLang* 拥有如下关键字
+
+== 基本语法
+
+=== 定义函数
+
+[source,kotlin]
+----
+fun sum(a: Int, b: Int): Int {
+    return a + b
+}
+----
+
+=== 定义对象
+
+[source,kotlin]
+----
+class Object(data:Number,){
+    // 查询数组长度
+    native fun len():Number
+    // 获取数组的某一个
+    native fun get(Number):V
+    // 设置数组
+    native fun set(Number,V):V
+}
+----

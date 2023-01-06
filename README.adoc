@@ -1,0 +1,17 @@
+= Easy Lang
+:experimental:
+:icons: font
+:toc: right
+:toc-title: 目录
+:toclevels: 4
+:source-highlighter: rouge
+
+== Todo
+
+- [ ] script engine by rust
+- [ ] compile to llvm ir
+- [ ] create lsp server
+
+== Learn
+
+link:SCHEMA.adoc[SCHEMA]

@@ -10,9 +10,27 @@
 
 *EasyLang* 语法类似于 `Kotlin`
 
-== 关键字
+== 变量和关键字
+
+=== 基本变量
+
+*EasyLang* 拥有如下基本变量：
+
+|===
+| 变量类型名称  |对应到Rust的变量 |说明
+
+| `Text` | `String` | 字符串（utf-8）
+| `Number` | `i64` | 整数
+| `Double` | `f64` | 浮点数 ( link:https://en.wikipedia.org/wiki/Floating-point_arithmetic#Accuracy_problems[Floating point error] )
+|`Bool`|`bool`| 布尔运算
+
+|===
+
+=== 关键字
 
 *EasyLang* 拥有如下关键字
+
+
 
 == 基本语法
 
@@ -20,21 +38,39 @@
 
 [source,kotlin]
 ----
-fun sum(a: Int, b: Int): Int {
+fun sum(a:Number, b:Number): Number {
     return a + b
 }
 ----
 
 === 定义对象
 
+一个对象由以下几个部分组成：
+
+* 变量
+* 初始化函数
+* 方法体
+
+其中：
+
+* 所有变量均可被外部访问。
+* 初始化函数可用于校验数据合法性
+
 [source,kotlin]
 ----
-class Object(data:Number,){
+class People(name:Text,age:Number){
+    init{
+        if (name == ''){
+            return Error("")
+        }
+    }
     // 查询数组长度
-    native fun len():Number
+    fun len():Number
     // 获取数组的某一个
     native fun get(Number):V
     // 设置数组
     native fun set(Number,V):V
 }
+let people:Result<People,Error> = People::safe('mame',12);
+let people:People = People('mame',12);
 ----

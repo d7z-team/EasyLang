@@ -1,5 +1,6 @@
 #!/usr/bin/env
-@import{namespace=Example,path=https://github.com/xxx.el,check=sha256/xxxx,optional}
+// 相关的
+@import(namespace="Example",path="https://github.com/xxx.el",check="sha256/xxxx",optional = true)
 
 native fun println(Any)
 

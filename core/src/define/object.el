@@ -1,32 +1,31 @@
-///
-/// 所有对象均继承至 Any 对象
-///
+//
+// 所有对象均继承 Any 对象
+//
 open class Any{
     native fun to_string()
 }
 
-
-///
-/// 整数类型 （rust:i64）
-///
+//
+// 整数类型 （rust:i64）
+//
 native class Number{
 }
 
-///
-/// 字符串类型 （rust:Sting）
-///
+//
+// 字符串类型 （rust:Sting）
+//
 native class String{
 }
 
-///
-/// 浮点类型 （rust:Double）
-///
+//
+// 浮点类型 （rust:Double）
+//
 native class Double{
 }
 
-///
-/// 浮点类型 （rust:Bool）
-///
+//
+// 浮点类型 （rust:Bool）
+//
 native class Bool{
 }
 

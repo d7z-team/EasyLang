@@ -19,7 +19,7 @@
 |===
 | 变量类型名称  |对应到Rust的变量 |说明
 
-| `Text` | `String` | 字符串（utf-8）
+| `String` | `String` | 字符串（utf-8）
 | `Number` | `i64` | 整数
 | `Double` | `f64` | 浮点数 ( link:https://en.wikipedia.org/wiki/Floating-point_arithmetic#Accuracy_problems[Floating point error] )
 |`Bool`|`bool`| 布尔运算
@@ -54,23 +54,20 @@ fun sum(a:Number, b:Number): Number {
 其中：
 
 * 所有变量均可被外部访问。
-* 初始化函数可用于校验数据合法性
+* 可以省略 `return`
 
 [source,kotlin]
 ----
 class People(name:Text,age:Number){
-    init{
-        if (name == ''){
-            return Error("")
-        }
-    }
     // 查询数组长度
-    fun len():Number
+    fun get_age():Number{
+        age
+    }
     // 获取数组的某一个
     native fun get(Number):V
     // 设置数组
     native fun set(Number,V):V
 }
-let people:Result<People,Error> = People::safe('mame',12);
-let people:People = People('mame',12);
+let people_01:People = People('mame',12);
+let people_02 = People('mame',12);
 ----
